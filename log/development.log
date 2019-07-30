@@ -1,0 +1,184 @@
+Started GET "/" for ::1 at 2019-07-22 18:08:32 +0900
+  
+ActiveRecord::NoDatabaseError (Unknown database 'freemarket_sample_development'):
+  
+activerecord (5.1.7) lib/active_record/connection_adapters/mysql2_adapter.rb:25:in `rescue in mysql2_connection'
+activerecord (5.1.7) lib/active_record/connection_adapters/mysql2_adapter.rb:11:in `mysql2_connection'
+activerecord (5.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:761:in `new_connection'
+activerecord (5.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:805:in `checkout_new_connection'
+activerecord (5.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:784:in `try_to_checkout_new_connection'
+activerecord (5.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:745:in `acquire_connection'
+activerecord (5.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:502:in `checkout'
+activerecord (5.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:376:in `connection'
+activerecord (5.1.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:933:in `retrieve_connection'
+activerecord (5.1.7) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.7) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.7) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (81.0ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT GET_LOCK('1270652534283276165', 0)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to DeviseCreateUsers (20190315083546)
+  [1m[35m (19.9ms)[0m  [1m[35mCREATE TABLE `users` (`id` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `nickname` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190315083546')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProducts (20190315090056)
+  [1m[35m (18.6ms)[0m  [1m[35mCREATE TABLE `products` (`id` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `detail` text, `shipping_fee` int, `expected_date` int, `price` int NOT NULL, `like_count` int DEFAULT 0, `status` varchar(255) NOT NULL, `size` varchar(255), `transaction_status` int DEFAULT 0 NOT NULL, `purchaser_id` int, `user_id` int NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_products_on_name`  (`name`),  INDEX `index_products_on_price`  (`price`),  INDEX `index_products_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_dee2631783`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190315090056')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-07-22 10:05:01', '2019-07-22 10:05:01')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('1270652534283276165')[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2019-07-22 19:05:39 +0900
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (1756.4ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered shared/_banner.html.haml (22.4ms)
+  Rendered shared/_footer.html.haml (13.2ms)
+  Rendered shared/_purchaseBtn.html.haml (1.9ms)
+  Rendered products/index.html.haml within layouts/application (1858.3ms)
+Completed 200 OK in 1949ms (Views: 1939.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-22 19:05:42 +0900
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (12.0ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered shared/_banner.html.haml (6.1ms)
+  Rendered shared/_footer.html.haml (8.1ms)
+  Rendered shared/_purchaseBtn.html.haml (2.3ms)
+  Rendered products/index.html.haml within layouts/application (60.7ms)
+Completed 200 OK in 98ms (Views: 93.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-22 19:06:04 +0900
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (12.9ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered shared/_banner.html.haml (6.5ms)
+  Rendered shared/_footer.html.haml (11.8ms)
+  Rendered shared/_purchaseBtn.html.haml (3.6ms)
+  Rendered products/index.html.haml within layouts/application (73.7ms)
+Completed 200 OK in 102ms (Views: 99.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-22 19:06:22 +0900
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (17.3ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered shared/_banner.html.haml (6.3ms)
+  Rendered shared/_footer.html.haml (10.7ms)
+  Rendered shared/_purchaseBtn.html.haml (2.6ms)
+  Rendered products/index.html.haml within layouts/application (72.3ms)
+Completed 200 OK in 100ms (Views: 97.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-22 19:06:25 +0900
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (11.5ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered shared/_banner.html.haml (9.1ms)
+  Rendered shared/_footer.html.haml (8.7ms)
+  Rendered shared/_purchaseBtn.html.haml (2.7ms)
+  Rendered products/index.html.haml within layouts/application (73.2ms)
+Completed 200 OK in 110ms (Views: 105.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-22 19:06:27 +0900
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (15.5ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered shared/_banner.html.haml (4.6ms)
+  Rendered shared/_footer.html.haml (11.9ms)
+  Rendered shared/_purchaseBtn.html.haml (5.8ms)
+  Rendered products/index.html.haml within layouts/application (77.9ms)
+Completed 200 OK in 111ms (Views: 108.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-22 19:06:29 +0900
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (14.5ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered shared/_banner.html.haml (4.1ms)
+  Rendered shared/_footer.html.haml (13.6ms)
+  Rendered shared/_purchaseBtn.html.haml (2.2ms)
+  Rendered products/index.html.haml within layouts/application (66.8ms)
+Completed 200 OK in 103ms (Views: 99.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-22 19:06:31 +0900
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (12.1ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered shared/_banner.html.haml (5.0ms)
+  Rendered shared/_footer.html.haml (11.4ms)
+  Rendered shared/_purchaseBtn.html.haml (2.1ms)
+  Rendered products/index.html.haml within layouts/application (62.7ms)
+Completed 200 OK in 97ms (Views: 93.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-22 19:13:26 +0900
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.haml within layouts/application
+  Rendered shared/_header.html.haml (8.6ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered shared/_banner.html.haml (4.4ms)
+  Rendered shared/_footer.html.haml (13.7ms)
+  Rendered shared/_purchaseBtn.html.haml (2.9ms)
+  Rendered products/index.html.haml within layouts/application (73.0ms)
+Completed 200 OK in 109ms (Views: 104.7ms | ActiveRecord: 0.0ms)
+
+
