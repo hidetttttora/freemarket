@@ -1,0 +1,11 @@
+.devise
+  = render "devise/shared/header"
+  .user__header
+    %p.phone__input 電話番号の確認
+  .user__choisebox
+    %p.phonenumber 携帯電話の番号
+    .phonenumber__form
+      %input.phonenumber__inputbox
+      .datails 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+    .deviseBtn
+      = button_to "次へ進む", {controller: 'signup', action: 'step4'}, {method: :get}

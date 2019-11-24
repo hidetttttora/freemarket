@@ -1,0 +1,21 @@
+.wrapper
+  = render "devise/shared/header"
+  .user__header
+    %p.user__registration 新規会員登録
+  .user__choisebox
+    .email
+      = link_to step2_signup_index_path do
+        %i.fa.fa-envelope
+        %p メールアドレスで登録する
+    .facebook
+      %i.fa.fa-facebook-square
+      %p facebookで登録する
+    .google
+      %i.fa.fa-google
+      %p Googleで登録する
+  .footer
+    .footer__upper__box
+      .policy
+      .rule
+      .specified__commercial__transaction__law
+    .footer__under__icon

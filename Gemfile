@@ -62,3 +62,7 @@ end
 
 gem "bulma-rails", "~> 0.4.2"
 gem 'bcrypt'
+
+gem 'active_hash'
+gem 'payjp'
+gem 'dotenv-rails'

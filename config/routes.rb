@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'card/new'
+
+  get 'card/show'
+
   root to: "products#index"
   devise_for :users
   resources :users do
